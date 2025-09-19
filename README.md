@@ -3,8 +3,7 @@
 This repository contains the Jupyter Notebooks and related files for the University of Utah Center for High Performance Computing's Python course. This is a hands-on introduction to the Python language for beginners.
 
 ## Contents
-* [notebooks/lectures](notebooks/lectures) contains Jupyter Notebooks with lecture notes and exercises
-  * Other Jupyter Notebook files provide additional examples
+* [notebooks/lectures](notebooks/lectures) contains Jupyter Notebooks with lecture notes and exercises (start here!)
 * [notebooks/solutions](notebooks/solutions) contains Jupyter Notebooks with solutions to exercises
 
 ## Notes
