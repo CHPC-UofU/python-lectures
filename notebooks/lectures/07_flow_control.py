@@ -6,13 +6,15 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <img src="public/flow_control.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Flow control: `if`, `elif`, and `else`
 
     It is imperative that your code can *branch* depending on certain critera, so you can handle different situations in different ways. The `if` statement lets you do this:
-    """)
+    """
+    )
     return
 
 
@@ -31,7 +33,8 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     Both the `elif` (a contraction of "else if") and `else` clauses are optional. Note the whitespace before the `print` statements; that indentation is significant!
 
     <div style="margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da; display: flex; flex-wrap: nowrap; overflow: hidden;">
@@ -42,13 +45,15 @@ def _(mo):
         <a style="background-color: #be0000; color: white; text-decoration: none; padding: 0.5em 1em; margin-top: 1em; margin-bottom: 0; border-radius: 0.25em; display: inline-block; font-weight: bold;" href="https://docs.python.org/3/tutorial/controlflow.html#if-statements">Read more about flow control&nbsp;&rarr;</a>
       </div>
     </div>
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
     <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
@@ -57,13 +62,15 @@ def _(mo):
     Create a function that takes one argument and returns the string `"odd"` or `"even"`, depending on whether the argument is an odd number or an even number. Assume for now that the argument is a positive integer.
 
     </div>
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 

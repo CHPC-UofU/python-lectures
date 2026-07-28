@@ -6,7 +6,8 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <img src="public/dictionaries.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Dictionaries
@@ -18,19 +19,15 @@ def _(mo):
     * The keys in a dictionary must be unique
     * The values can be of any type
     * The lookup on a key is **extremely** fast
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     # What's the type of the variable below? How does this differ from a set?
-    elements = {
-        "H": "hydrogen",
-        "He": "helium",
-        "Li": "lithium",
-        "Be": "berylium"
-    }
+    elements = {"H": "hydrogen", "He": "helium", "Li": "lithium", "Be": "berylium"}
 
     elements["B"] = "boron"
 
@@ -43,9 +40,11 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## What if the key isn't in the dictionary?
-    """)
+    """
+    )
     return
 
 
@@ -57,7 +56,8 @@ def _(elements):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     An attempt to access a missing key generates a `KeyError` exception. We'll learn about exception handling next (in the next notebook).
 
     <div style="margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da; display: flex; flex-wrap: nowrap; overflow: hidden;">
@@ -68,13 +68,15 @@ def _(mo):
         <a style="background-color: #be0000; color: white; text-decoration: none; padding: 0.5em 1em; margin-top: 1em; margin-bottom: 0; border-radius: 0.25em; display: inline-block; font-weight: bold;" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">Read more about dictionaries&nbsp;&rarr;</a>
       </div>
     </div>
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
     <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
@@ -86,7 +88,8 @@ def _(mo):
     *Hint: this is a nice use case for a dictionary.*
 
     </div>
-    """)
+    """
+    )
     return
 
 
@@ -97,7 +100,8 @@ def hello_world():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
     <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
@@ -108,7 +112,8 @@ def _(mo):
     The [genetic code](https://en.wikipedia.org/wiki/Genetic_code "Wikipedia") provides a mapping from the 4-letter alphabet of DNA (A, C, G, and T) to the 20-letter code of amino acids, that make up proteins. Three consecutive DNA "letters," called a codon, maps onto a single amino acid letter. For example, the DNA string "ATG" maps onto the amino acid letter "M." Using the provided module geneticcode.py, which defines the genetic code as a dictionary named `codons`, write a function that translates a DNA string to its amino acid sequence.
 
     </div>
-    """)
+    """
+    )
     return
 
 
@@ -116,7 +121,7 @@ def _(mo):
 def _():
     # Here's a DNA sequence to translate:
     dna_sequence = "ATGGAGGAGCCGCAGTCAGATCCTAGCGTCGAGCCC"
-    # Write a function that translates this into an amino acid sequence using the codons dictionary from the 
+    # Write a function that translates this into an amino acid sequence using the codons dictionary from the
     # geneticcode module and call your function with this sequence. This 36-letter DNA sequence should translate
     # into a 12-letter amino acid sequence.
     return
@@ -125,6 +130,7 @@ def _():
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 

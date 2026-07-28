@@ -61,12 +61,20 @@ def _():
 @app.cell
 def _():
     # Arithmetic operators
-    my_variable_1 = 1 + 1  # similar for - (subtraction), * (multiplication), / (division)
-    my_variable_1 = my_variable_1 + 1  # similar for -= (subtract from current value), *= (multiply current value by), /= (divide current value by)
+    my_variable_1 = (
+        1 + 1
+    )  # similar for - (subtraction), * (multiplication), / (division)
+    my_variable_1 = (
+        my_variable_1 + 1
+    )  # similar for -= (subtract from current value), *= (multiply current value by), /= (divide current value by)
     #           ^ shorthand for my_variable = my_variable + 1
-    my_variable_1 = 5 ** 2
-    my_variable_1 = 23 % 5  # 23 / 5 = 4 remainder 3, and % keeps only the remainder, so 23 % 5 is 3
-    my_variable_1 = 23 // 5  # 23 / 5 = 4 remainder 3, and // drops the remainder, so 23 // 5 is 4
+    my_variable_1 = 5**2
+    my_variable_1 = (
+        23 % 5
+    )  # 23 / 5 = 4 remainder 3, and % keeps only the remainder, so 23 % 5 is 3
+    my_variable_1 = (
+        23 // 5
+    )  # 23 / 5 = 4 remainder 3, and // drops the remainder, so 23 // 5 is 4
     return
 
 
@@ -81,7 +89,10 @@ def _():
     def infinite_loop():
         while True:
             pass
-    my_variable_2 = True or infinite_loop()  # This has been "short-circuited" to True because "True or …" will always be True  # The infinite loop never runs
+
+    my_variable_2 = (
+        True or infinite_loop()
+    )  # This has been "short-circuited" to True because "True or …" will always be True  # The infinite loop never runs
     return
 
 
@@ -100,25 +111,25 @@ def _():
 
 @app.cell
 def _():
-    my_variable_4 = 'hello'
-    my_variable_4 = 'h' in my_variable_4  # "h" is in "hello", so this is True
+    my_variable_4 = "hello"
+    my_variable_4 = "h" in my_variable_4  # "h" is in "hello", so this is True
     a = (1,)
     # Be careful! "is" tests whether two objects are the exact same object
     # Use == to test for equality
     b = (1,)
-    print('a:', a)
-    print('b:', b)
-    print('a is b:', a is b)
-    print('a == b:', a == b)
-    print('id(a):', id(a))
-    print('id(b):', id(b))
+    print("a:", a)
+    print("b:", b)
+    print("a is b:", a is b)
+    print("a == b:", a == b)
+    print("id(a):", id(a))
+    print("id(b):", id(b))
     b = a
-    print('a:', a)
-    print('b:', b)
-    print('a is b:', a is b)
-    print('a == b:', a == b)
-    print('id(a):', id(a))
-    print('id(b):', id(b))
+    print("a:", a)
+    print("b:", b)
+    print("a is b:", a is b)
+    print("a == b:", a == b)
+    print("id(a):", id(a))
+    print("id(b):", id(b))
     return
 
 

@@ -6,7 +6,8 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <img src="public/sets.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Sets
@@ -23,7 +24,8 @@ def _(mo):
         <a style="background-color: #be0000; color: white; text-decoration: none; padding: 0.5em 1em; margin-top: 1em; margin-bottom: 0; border-radius: 0.25em; display: inline-block; font-weight: bold;" href="https://docs.python.org/3/tutorial/datastructures.html#sets">Read more about sets&nbsp;&rarr;</a>
       </div>
     </div>
-    """)
+    """
+    )
     return
 
 
@@ -34,20 +36,22 @@ def _():
     import random, string
 
     # What does this next line do? What is the type of the variable?
-    random_letters = {
-        random.choice(string.ascii_lowercase)
-        for i in range(20)
-    }
+    random_letters = {random.choice(string.ascii_lowercase) for i in range(20)}
 
     print(f"The random_letters set contains {len(random_letters)} unique letters.")
-    print(f"random_letters contains these vowels: {random_letters.intersection(vowels)}.")
-    print(f"random_letters contains these consonants: {random_letters.difference(vowels)}.")
+    print(
+        f"random_letters contains these vowels: {random_letters.intersection(vowels)}."
+    )
+    print(
+        f"random_letters contains these consonants: {random_letters.difference(vowels)}."
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
     <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
@@ -59,13 +63,15 @@ def _(mo):
     *Please note that this is intended only as an exercise. If you want to create cryptographically secure passwords in Python, you will want to use the [secrets module](https://docs.python.org/3/library/secrets.html). It is a better idea to use an existing, well tested password manager.*
 
     </div>
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 

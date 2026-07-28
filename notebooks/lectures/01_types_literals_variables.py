@@ -44,21 +44,21 @@ def _(mo):
 def _():
     # Let's define some variables using the assignment operator "=", then print their values and types.
     _x = 1
-    y = 'Here is a character string'
-    print('The value of x is', _x, 'and its type is', type(_x))
+    y = "Here is a character string"
+    print("The value of x is", _x, "and its type is", type(_x))
     # What are the values assigned to x and y, what are the types of data assigned to x and y?
-    print('The value of y is', y, 'and its type is', type(y))
+    print("The value of y is", y, "and its type is", type(y))
     z = True
     # Assign the value of True or False to a variable. What data type is assigned to the variable?
-    print('The type of z is', type(z))
+    print("The type of z is", type(z))
     return
 
 
 @app.cell
 def _():
     # Now assign the value "Hello, world!" to x. What is the type of x now?
-    _x = 'Hello, world!'
-    print('The type of data assigned to x is', type(_x))
+    _x = "Hello, world!"
+    print("The type of data assigned to x is", type(_x))
     return
 
 

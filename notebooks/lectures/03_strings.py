@@ -25,7 +25,7 @@ def _():
 
     s2 = "Here's another short string. Note that it contains a single quote (an apostrophe)."
 
-    s3 = 'Here\'s another short string. It contains a single quote, but it has been "escaped" so it doesn\'t end the string.'
+    s3 = "Here's another short string. It contains a single quote, but it has been \"escaped\" so it doesn't end the string."
 
     s4 = """This is a long string.
     Its content includes multiple lines of text."""
@@ -46,14 +46,14 @@ def _(mo):
 @app.cell
 def _():
     # You can multiply and add them:
-    s1_1 = 'abc-' * 3 + 'xyz'
-    print('s1:', s1_1)
-    print('s1 split by - characters:', s1_1.split('-'))
+    s1_1 = "abc-" * 3 + "xyz"
+    print("s1:", s1_1)
+    print("s1 split by - characters:", s1_1.split("-"))
     # You can split them by some delimiter character using the string's split method:
-    print('s1 converted to uppercase:', s1_1.upper())
-    print('s1 is', len(s1_1), 'characters long')
+    print("s1 converted to uppercase:", s1_1.upper())
+    print("s1 is", len(s1_1), "characters long")
     # Strings have a length:
-    print('s1 contains', s1_1.count('a'), 'a characters')
+    print("s1 contains", s1_1.count("a"), "a characters")
     return
 
 
@@ -103,9 +103,9 @@ def _():
     version_number = 3.6
     s4_1 = f"It's easy to format text with f-strings, which were added in Python {version_number}."
     print(s4_1)
-    role = 'student'
-    organization = 'the University of Utah'
-    print(f'I am a {role} at {organization}.')
+    role = "student"
+    organization = "the University of Utah"
+    print(f"I am a {role} at {organization}.")
     return
 
 

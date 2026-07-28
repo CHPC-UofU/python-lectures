@@ -6,7 +6,8 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <img src="public/inheritance.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Inheritance
@@ -16,15 +17,18 @@ def _(mo):
     - Parent classes are also called "base" classes or "super" classes
       - You can add or replace methods and data values of the parent class in the child class
       - A child class can be derived from one (single inheritance) or several (multiple inheritance) base classes
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Import the `Person` class from the previous lecture to allow examples from this lecture to work
-    """)
+    """
+    )
     return
 
 
@@ -32,14 +36,11 @@ def _(mo):
 def _():
     import time
 
-
     class Person:
         "Here's an improved Person example."
+
         def __init__(
-            self,  # This is a required argument!
-            first_name,
-            last_name,
-            year_of_birth
+            self, first_name, last_name, year_of_birth  # This is a required argument!
         ):
             "Constructor method of the class Person. (This is the docstring for this method.)"
             self.first_name = first_name
@@ -62,11 +63,10 @@ def _():
             # the current year. (Not exactly right, but close enough for our purposes.)
             return current_year - self.year_of_birth
 
-
     rockstars = [
-        Person("Lou",   "Reed",  1942),
-        Person("Iggy",  "Pop",   1947),
-        Person("David", "Bowie", 1947)
+        Person("Lou", "Reed", 1942),
+        Person("Iggy", "Pop", 1947),
+        Person("David", "Bowie", 1947),
     ]
     rockstars.sort()
 
@@ -77,9 +77,11 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Inheritance example
-    """)
+    """
+    )
     return
 
 
@@ -87,16 +89,16 @@ def _(mo):
 def _(Person):
     class Student(Person):
         "A Student is a Person with a GPA."
+
         def __init__(self, first_name, last_name, year_of_birth, grade_point_average):
             # Call the parent class constructor.
-            Person.__init__(self, first_name, last_name, year_of_birth) 
+            Person.__init__(self, first_name, last_name, year_of_birth)
             # You can also do it like this:
             # super().__init__(first_name, last_name, year_of_birth)
             self.gpa = grade_point_average
 
         def __str__(self):
             return f"{self.last_name}, {self.first_name}: born {self.year_of_birth}, GPA {self.gpa}"
-
 
     s = Student("Alice", "Pythoncoder", 2001, 4.0)
     print(s)
@@ -106,20 +108,24 @@ def _(Person):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     Notice that the `Student` class definition replaces only the base class (`Person`) methods that need to be modified.
 
     Also notice that `Student` class objects have an `age()` method; where does that come from?
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ### Example of using inheritance: User-defined exceptions
     Python defines [lots of exceptions](https://docs.python.org/3/library/exceptions.html), but you can create your own custom exceptions too:
-    """)
+    """
+    )
     return
 
 
@@ -128,22 +134,26 @@ def _():
     class MyException(Exception):
         pass
 
-
-    raise MyException("Something bad happened. Here's some information to help you sort it out.")
+    raise MyException(
+        "Something bad happened. Here's some information to help you sort it out."
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     The `pass` statement is used when you want a block of code that does nothing at all. Here, we are creating a new class named `MyException` which is derived from the Python class `Exception`.
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
     <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
@@ -155,13 +165,15 @@ def _(mo):
     4. Add some instances of the `Poodle` class to your list of dogs, so list contains some `Dog` instances and some `Poodle` instances, and then re-run the code that iterates through the list.
 
     </div>
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 

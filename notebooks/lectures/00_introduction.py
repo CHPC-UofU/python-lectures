@@ -6,7 +6,8 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <h1 style="color: #be0000; font-weight: bold; font-size: 4em;">Hands-on Introduction to Python</h1>
 
     Welcome to the Hands-on Introduction to Python course from the Center for High Performance Computing at the University of Utah. This is an introduction to the Python language for beginners, written by Brett Milash, Wim Cardoen, and Robben Migacz.
@@ -19,19 +20,22 @@ def _(mo):
         <a style="background-color: #be0000; color: white; text-decoration: none; padding: 0.5em 1em; margin-top: 1em; margin-bottom: 0; border-radius: 0.25em; display: inline-block; font-weight: bold;" href="https://www.youtube.com/watch?v=9FfLpe30cys&list=PLPPvrxDFPZ43NzlBPZEePVaCJE7BXHOw8">View lectures on YouTube&nbsp;&rarr;</a>
       </div>
     </div>
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Why is Python useful?
 
     Like all scripting and programming languages, Python allows its users to manipulate and transform data. All computer programs provide instructions that tell a computer how to operate on information; they give **a sequence of steps to produce output (such as simulation results, plots, summary statistics, graphics, audio, or video) from input (such as datasets or input files, initial conditions, or user-provided information)**. A program or script is like the blueprint for a factory that operates on—and produces—information.
 
     The Python _interpreter_ reads and executes Python scripts, like the one given below.
-    """)
+    """
+    )
     return
 
 
@@ -43,6 +47,7 @@ def _():
         High Performance Computing. You can run this code cell by typing Shift+Return.
         """
         import sys
+
         print("We will use Python version", sys.version)
 
     hands_on_intro_to_python()
@@ -57,7 +62,8 @@ def _(hands_on_intro_to_python):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Characteristics of the Python language
     * **Python is interpreted**
     * **Python is object-oriented**
@@ -74,13 +80,15 @@ def _(mo):
       * Level of indentation defines "blocks" of code
       * Either tabs *or* spaces; choose one *or* the other!
       * Some editors take care of this for you
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Running Python code
 
     It's possible to run Python
@@ -93,7 +101,8 @@ def _(mo):
             * Make sure the script is executable: `chmod +x scriptname.py`
             * Run the script from the command line: `./scriptname.py`
     * In a cell in a **Jupyter Notebook**, **marimo notebook**, or similar technology
-    """)
+    """
+    )
     return
 
 
@@ -110,7 +119,8 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Big concepts in Python
     * **Variables** are names for data, which can be
       * a simple object like a number or a character string
@@ -119,13 +129,15 @@ def _(mo):
     * **Functions**, which are reusable blocks of code
     * **Classes**, which define all the different types of objects, including data and *methods* (more on this later)
     * **Modules**, which are entire files of Python code, containing variables, functions, and classes
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 

@@ -6,7 +6,8 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     <img src="public/classes.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Classes
@@ -18,27 +19,32 @@ def _(mo):
     * Classes provide
       * a namespace inside which your code is isolated from outside complexity
       * a mechanism for code reuse through *inheritance* (more on this later)
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Creating new instances of a class
     When a class is defined, Python creates a function with the same name as the class, and that function creates new objects belonging to that class. For example, the function `list()` creates new `list` objects. Typically, the arguments to that function provide the data that is stored within the new object. Initializing the new object with that data is handled by a special method named `__init__()`.
 
     When we write the code for our own classes we need to provide that `__init__()` method to do the initialization, and it looks like this:
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Class example
     Let's write a simple class that represents a person:
-    """)
+    """
+    )
     return
 
 
@@ -52,8 +58,11 @@ def _():
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
-    p = _Person('George', 'Washington', 1732)
-    print(p.first_name)  # Creating an instance of class Person by calling the Person() function.
+
+    p = _Person("George", "Washington", 1732)
+    print(
+        p.first_name
+    )  # Creating an instance of class Person by calling the Person() function.
     print(type(p))
     print(p)
     return
@@ -61,15 +70,18 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     Note the first argument to the `__init__()` method: `self`. Every method (with the exception of [staticmethods](https://docs.python.org/3/library/functions.html#staticmethod), not discussed here) will have an argument like this, and that argument refers to the object that is getting initialized or otherwise operated on by the method.
-    """)
+    """
+    )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     ## Special class methods
     Objects have a variety of special methods that are called behind the scenes:
     * `__init__()`: class constructor, or initializer
@@ -89,7 +101,8 @@ def _(mo):
     These methods are all detailed [on the Python documentation](https://docs.python.org/3.7/reference/datamodel.html#special-method-names).
 
     Let's improve on our `Person` class:
-    """)
+    """
+    )
     return
 
 
@@ -108,7 +121,7 @@ def _():
 
         def __str__(self):
             """Returns the string representation of the object"""
-            return f'{self.last_name}, {self.first_name}: born {self.year_of_birth}'
+            return f"{self.last_name}, {self.first_name}: born {self.year_of_birth}"
 
         def __lt__(self, other):
             """Used to compare this Person object with another Person object for sorting."""
@@ -118,16 +131,28 @@ def _():
             """Returns person's (approximate) age in years"""
             current_year = time.localtime(time.time()).tm_year
             return current_year - self.year_of_birth
-    scientists = [_Person('Isaac', 'Newton', 1643), _Person('Marie', 'Curie', 1867), _Person('Dorothy', 'Hodgkin', 1910), _Person('Albert', 'Einstein', 1879), _Person('Galileo', 'Galilei', 1564), _Person('Ada', 'Lovelace', 1815), _Person('Johannes', 'Kepler', 1571)]
+
+    scientists = [
+        _Person("Isaac", "Newton", 1643),
+        _Person("Marie", "Curie", 1867),
+        _Person("Dorothy", "Hodgkin", 1910),
+        _Person("Albert", "Einstein", 1879),
+        _Person("Galileo", "Galilei", 1564),
+        _Person("Ada", "Lovelace", 1815),
+        _Person("Johannes", "Kepler", 1571),
+    ]
     scientists.sort()
     for scientist in scientists:
-        print(f'{scientist}, (approximate) age {scientist.approximate_age()} years')  # Calculate the current year  # Calculate this person's age by subtracting the year they were born from  # the current year. (Not exactly right, but close enough for our purposes.)
+        print(
+            f"{scientist}, (approximate) age {scientist.approximate_age()} years"
+        )  # Calculate the current year  # Calculate this person's age by subtracting the year they were born from  # the current year. (Not exactly right, but close enough for our purposes.)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     How does this work? The lines with `Person(…)` inside of the `scientists` list call the `__init__()` function of the `Person` class. Here, we create a few different *instances* of the class:
 
     <code style="line-height: 2em; color: black !important;">
@@ -169,13 +194,15 @@ def _(mo):
         <a style="background-color: #be0000; color: white; text-decoration: none; padding: 0.5em 1em; margin-top: 1em; margin-bottom: 0; border-radius: 0.25em; display: inline-block; font-weight: bold;" href="https://docs.python.org/3/tutorial/classes.html">Read more about classes&nbsp;&rarr;</a>
       </div>
     </div>
-    """)
+    """
+    )
     return
 
 
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 

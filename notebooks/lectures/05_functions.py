@@ -19,13 +19,14 @@ def _(mo):
 
 @app.cell
 def _():
-    def test_function(argument1, argument2, argumentn='default_value'):
+    def test_function(argument1, argument2, argumentn="default_value"):
         """This is the documentation string (or docstring) for the function"""
-        print('Value of argument1:', argument1)  # The body of the function goes here:
-        print('Value of argument2:', argument2)
-        print('Value of argumentn:', argumentn)
-    _x = test_function('a', 2)
-    print('test_function returned', _x)
+        print("Value of argument1:", argument1)  # The body of the function goes here:
+        print("Value of argument2:", argument2)
+        print("Value of argumentn:", argumentn)
+
+    _x = test_function("a", 2)
+    print("test_function returned", _x)
     help(test_function)
     return
 
@@ -59,16 +60,14 @@ def _():
     subject = "The quick brown fox"
     action = "jumps over the lazy dog"
 
-
     def tell_story(subject):
         "Tell a little story"
         note = "This variable only exists within this function!"
         print(f"{subject} {action}")
 
-
     tell_story(subject="The slow tortoise")  # What does "subject=…" do?
-    tell_story(subject)                      # Did we reassign the variable subject?
-    tell_story(subject=subject)              # … what? Python doesn't make any sense!
+    tell_story(subject)  # Did we reassign the variable subject?
+    tell_story(subject=subject)  # … what? Python doesn't make any sense!
     return
 
 
@@ -129,10 +128,11 @@ def _(mo):
 @app.cell
 def _(y):
     def _x():
-        message = 'Hello!'
+        message = "Hello!"
 
         def y():
             print(message)
+
     y()
     return
 
@@ -161,11 +161,13 @@ def _(mo):
 @app.cell
 def _():
     def _x():
-        message = 'Hello!'
+        message = "Hello!"
 
         def y():
             print(message)
+
         y()
+
     _x()
     return
 
@@ -208,7 +210,8 @@ def _(mo):
 def _():
     def f(x):
         """This function squares the argument"""
-        return _x ** 2
+        return _x**2
+
     y = f(x=5)
     print(y)
     return (y,)

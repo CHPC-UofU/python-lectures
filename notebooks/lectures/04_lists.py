@@ -137,7 +137,9 @@ def _():
     print(letters[3:12:2])
 
     # You can use the default for one or more fields by omitting a value:
-    print(letters[::3])  # Use the default start and end position, but use a step size of 3
+    print(
+        letters[::3]
+    )  # Use the default start and end position, but use a step size of 3
     return
 
 
