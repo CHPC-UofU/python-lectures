@@ -6,14 +6,12 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <img src="public/lambda.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Anonymous functions (lambda expressions)
     Functions are objects, like everything else in Python. Most functions are associated with an identifier, like `hello_world()`. There are situations where we want to pass a function as an argument to another function, and one way to do that is with the function's name. Here is an example using the `map()` function, which applies a function to each element of a list:
-    """
-    )
+    """)
     return
 
 
@@ -35,11 +33,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     But defining a new function for something we're only going to use once is unnecessary. Instead, we can use a "lambda expression" to create an anonymous function right where we need it:
-    """
-    )
+    """)
     return
 
 
@@ -57,11 +53,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Assigning a lambda expression to an identifier
-    """
-    )
+    """)
     return
 
 
@@ -74,8 +68,7 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <div style="margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da; display: flex; flex-wrap: nowrap; overflow: hidden;">
       <div style="background-color: #be0000; width: 10%; flex-shrink: 0; display: flex; justify-content: center; align-items: center;"><img src="public/tutorial.svg" style="width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block;"></div>
       <div style="padding: 1.5em;">
@@ -84,15 +77,13 @@ def _(mo):
         <a style="background-color: #be0000; color: white; text-decoration: none; padding: 0.5em 1em; margin-top: 1em; margin-bottom: 0; border-radius: 0.25em; display: inline-block; font-weight: bold;" href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">Read more about lambda expressions&nbsp;&rarr;</a>
       </div>
     </div>
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 

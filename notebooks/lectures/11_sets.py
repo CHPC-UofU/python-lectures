@@ -6,8 +6,7 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <img src="public/sets.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Sets
@@ -24,8 +23,7 @@ def _(mo):
         <a style="background-color: #be0000; color: white; text-decoration: none; padding: 0.5em 1em; margin-top: 1em; margin-bottom: 0; border-radius: 0.25em; display: inline-block; font-weight: bold;" href="https://docs.python.org/3/tutorial/datastructures.html#sets">Read more about sets&nbsp;&rarr;</a>
       </div>
     </div>
-    """
-    )
+    """)
     return
 
 
@@ -50,28 +48,26 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
-    <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
+    <img src="public/exercise.svg" style="height: 2.5em; margin: 0;" />
 
-    ## Exercise: Password generator
-    Write a function named `random_password()` that uses the string and random modules, and returns a string of 10 random letters, numbers, and symbols. If you want to get fancy, you could give your function an optional password length argument.
+    <h2>Exercise: Password generator</h2>
+
+    <p>Write a function named <code>random_password()</code> that uses the string and random modules, and returns a string of 10 random letters, numbers, and symbols. If you want to get fancy, you could give your function an optional password length argument.</p>
 
 
-    *Please note that this is intended only as an exercise. If you want to create cryptographically secure passwords in Python, you will want to use the [secrets module](https://docs.python.org/3/library/secrets.html). It is a better idea to use an existing, well tested password manager.*
+    <p><em>Please note that this is intended only as an exercise. If you want to create cryptographically secure passwords in Python, you will want to use the <a href="https://docs.python.org/3/library/secrets.html">secrets module</a>. It is a better idea to use an existing, well tested password manager.</em></p>
 
     </div>
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 

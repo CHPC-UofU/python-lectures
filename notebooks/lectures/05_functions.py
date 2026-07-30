@@ -21,7 +21,7 @@ def _(mo):
 def _():
     def test_function(argument1, argument2, argumentn="default_value"):
         """This is the documentation string (or docstring) for the function"""
-        print("Value of argument1:", argument1)  # The body of the function goes here:
+        print("Value of argument1:", argument1)
         print("Value of argument2:", argument2)
         print("Value of argumentn:", argumentn)
 
@@ -239,13 +239,13 @@ def _(mo):
     mo.md(r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
-    <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
+    <img src="public/exercise.svg" style="height: 2.5em; margin: 0;" />
 
     <h2>Exercise: <em>Hello, world</em> function</h2>
 
-    In the following cell, create a function named `hello_world()` that takes no arguments. It should print `"Hello, world!"` when you call the function.
+    In the following cell, create a function named <code>hello_world()</code> that takes no arguments. It should print <code>Hello, world!</code> when you call the function.
 
-    Then, modify your function to take one optional argument that defaults to `"world"`. If called without an argument, your function should print `"Hello, world!"`. If you pass a value to the function, like `"Bob"`, your function should print `"Hello, Bob!"`.
+    Then, modify your function to take one optional argument that defaults to <code>"world"</code>. If called without an argument, your function should print <code>"Hello, world!"</code>. If you pass a value to the function, like <code>"Bob"</code>, your function should print <code>"Hello, Bob!"</code>.
 
     </div>
     """)

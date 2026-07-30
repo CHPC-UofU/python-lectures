@@ -6,8 +6,7 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <img src="public/tuples.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Tuples
@@ -17,8 +16,7 @@ def _(mo):
     * Tuples are sequences, so we can
        * iterate through them
        * access elements by index
-    """
-    )
+    """)
     return
 
 
@@ -42,20 +40,17 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     These are handy for returning multiple values from a function: `return (mean + sd, mean - sd)`
 
     One oddity about tuple syntax: A tuple with a single element must be defined using a comma, such as `(5,)`. The expression `(5)` is the same as `5`, whereas `(5,)` is a tuple with the single element `5`. In other words, a comma is necessary to initialize a tuple, as parentheses are used *both* to define operation precedence and to initialize tuples.
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 

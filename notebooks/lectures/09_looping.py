@@ -6,25 +6,21 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <img src="public/loop.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Looping
     Python provides two different types of loop statements: `while` loops and `for` loops.
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## `while` loops
     A `while` loop tests some logical condition and executes the body of the loop while that condition evaluates to `True`:
-    """
-    )
+    """)
     return
 
 
@@ -40,12 +36,10 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## `for` loops
     `for` loops let you process each item in a sequence of items, like each item in a list:
-    """
-    )
+    """)
     return
 
 
@@ -58,22 +52,18 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     There are many other functions and statements that are useful in the context of loops.
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## The `range()` function
     `range(start, stop[, stepsize=1])` returns a list-like object containing integers from `start` to `stop - 1`. This is useful for all kinds of list processing and `for`-loop control:
-    """
-    )
+    """)
     return
 
 
@@ -106,31 +96,33 @@ def _():
 def _(mo):
     mo.md(
         r"""
-    <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
+        <img src="public/exercise.svg" style="height: 2.5em; margin: 0;" />
 
-    <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
+        ## Exercise: Factorial function
 
-    ## Exercise: *Factorial* function
-    Create a function named `factorial()` that takes one argument, `n`, and returns $n!$ (or $1 \times 2 \times 3 \times \ldots \times (n-2) \times (n-1) \times n$). You can implement this with a `for` loop.
+        Create a function named `factorial` that takes one argument, `n`, and returns $n!$ (or $1 \times 2 \times 3 \times \ldots \times (n-2) \times (n-1) \times n$). You can implement this with a `for` loop.
 
-    For this exercise, you can assume that the argument is a positive integer. Write the `factorial()` function and try calling it with a few different positive integer values.
+        For this exercise, you can assume that the argument is a positive integer. Write the `factorial(n)` function and try calling it with a few different positive integer values.
 
-    (You could also get fancy and write a recursive function, a function that calls itself. If you do this, **make sure** your code tests when to end the recursion!)
-
-    </div>
-    """
+        (You could also get fancy and write a recursive function, a function that calls itself. If you do this, *make sure* your code tests when to end the recursion!)
+        """
+    ).style(
+        {
+            "padding": "1.5em",
+            "margin-top": "1em",
+            "border-radius": "0.5em",
+            "box-shadow": "0 0 0.5em #ced4da",
+        }
     )
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Looping flow control: the `continue` statement
     Sometimes you want to skip the rest of the body of a loop, and `continue` with the next iteration:
-    """
-    )
+    """)
     return
 
 
@@ -152,12 +144,10 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Looping flow control: the `break` statement
     Sometimes you need to `break` out of a loop completely, before you've reached the last iteration:
-    """
-    )
+    """)
     return
 
 
@@ -177,12 +167,10 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## List comprehension
     `for` loops are handy for populating lists. Let's say we want a list of integers from 0 to 9 squared. You could write this as
-    """
-    )
+    """)
     return
 
 
@@ -197,11 +185,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     However, it is also possible to write this loop in one line:
-    """
-    )
+    """)
     return
 
 
@@ -214,13 +200,11 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     This is "list comprehension." For more details, see the [Python tutorial](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions "Python Tutorial").
 
     List comprehension can also include simple `if` statements:
-    """
-    )
+    """)
     return
 
 
@@ -239,22 +223,18 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     Note that the order of `for` and `if` varies in the examples above; in the first example, we conditionally append values to the list (`if` modifies the `for` loop, not the value), while in the second example, we always append a conditional value (`if` modifies the value).
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Iterators
     For loops can _iterate_ across a variety of objects, such as strings, lists, `range()` objects, or open files. These objects are all _iterators_. More on iterators [here](https://docs.python.org/3/tutorial/classes.html#iterators "Python Tutorial").
-    """
-    )
+    """)
     return
 
 
@@ -275,25 +255,23 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
-    <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
+    <img src="public/exercise.svg" style="height: 2.5em; margin: 0;" />
 
-    ## Exercise: Dog name finder
-    The file "popular_dog_names.txt" lists the 10 most popular names for female and male dogs in 2016 (according to the [American Kennel Club](https://www.akc.org/expert-advice/news/popular-dog-names-2016/)). Write a function that accepts a proposed dog name and checks the popular_dog_names.txt file to see whether that name is popular. If it is, print that the proposed name is popular, its rank, and for what gender of dog. If the proposed name is not found, print that the name wasn't found.
+    <h2>Exercise: Dog name finder</h2>
+
+    The file popular_dog_names.txt lists the 10 most popular names for female and male dogs in 2016 (according to the <a href="https://www.akc.org/expert-advice/news/popular-dog-names-2016/">American Kennel Club</a>). Write a function that accepts a proposed dog name and checks the popular_dog_names.txt file to see whether that name is popular. If it is, print that the proposed name is popular, its rank, and for what gender of dog. If the proposed name is not found, print that the name wasn't found.
 
     </div>
-    """
-    )
+    """)
     return
 
 
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 

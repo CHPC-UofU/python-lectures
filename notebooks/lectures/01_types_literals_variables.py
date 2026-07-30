@@ -75,11 +75,11 @@ def _(mo):
     mo.md(r"""
     <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
 
-    <img src="public/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
+    <img src="public/exercise.svg" style="height: 2.5em; margin: 0;" />
 
     <h2>Exercise: Now it's your turn!</h2>
 
-    In the cell below, create the variables `major` and `graduation_year`, then assign your major to `major` and your graduation year (or expected graduation year) to `graduation_year`. Then, print them using the `print()` function to produce the output `My major is … and I graduated (or expect to graduate) in …`.
+    In the cell below, create the variables <code>major</code> and <code>graduation_year</code>, then assign your major to <code>major</code> and your graduation year (or expected graduation year) to <code>graduation_year</code>. Then, print them using the <code>print()</code> function to produce the output <code>My major is … and I graduated (or expect to graduate) in …</code>.
 
     </div>
     """)

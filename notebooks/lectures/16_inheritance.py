@@ -6,8 +6,7 @@ app = marimo.App()
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     <img src="public/inheritance.svg" style="width: 10em; margin: auto; margin-bottom: 5em;" />
 
     # Inheritance
@@ -17,18 +16,15 @@ def _(mo):
     - Parent classes are also called "base" classes or "super" classes
       - You can add or replace methods and data values of the parent class in the child class
       - A child class can be derived from one (single inheritance) or several (multiple inheritance) base classes
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Import the `Person` class from the previous lecture to allow examples from this lecture to work
-    """
-    )
+    """)
     return
 
 
@@ -77,11 +73,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ## Inheritance example
-    """
-    )
+    """)
     return
 
 
@@ -108,24 +102,20 @@ def _(Person):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     Notice that the `Student` class definition replaces only the base class (`Person`) methods that need to be modified.
 
     Also notice that `Student` class objects have an `age()` method; where does that come from?
-    """
-    )
+    """)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     ### Example of using inheritance: User-defined exceptions
     Python defines [lots of exceptions](https://docs.python.org/3/library/exceptions.html), but you can create your own custom exceptions too:
-    """
-    )
+    """)
     return
 
 
@@ -142,11 +132,9 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
+    mo.md(r"""
     The `pass` statement is used when you want a block of code that does nothing at all. Here, we are creating a new class named `MyException` which is derived from the Python class `Exception`.
-    """
-    )
+    """)
     return
 
 
@@ -154,18 +142,22 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-    <div style="padding: 1.5em; margin-top: 1em; border-radius: 0.5em; box-shadow: 0 0 0.5em #ced4da;">
+        <img src="public/exercise.svg" style="height: 2.5em; margin: 0;" />
 
-    <img src="../../images/exercise.svg" style="height: 2.5em; margin-bottom: -1em;" />
+        ## Exercise: Classes and inheritance
 
-    ## Exercise: Classes and inheritance
-    1. In the cell below, create a class named `Dog` that represents dogs. The constructor, `__init__()`, should take one argument in addition to `self`: the dog's name. The class should implement one additional method, which is `speak()`. The `speak()` method should `return` some dog-appropriate sound, for example `"Arf!"`.
-    2. Create a list of several instances of the `Dog` class, and iterate through the list printing each dog's name and the sound they return when you call the `speak()` method.
-    3. Derive a `Poodle` class from the `Dog` class such that instances of the `Poodle` class return a more poodle-appropriate sound, like `"Yip!"`, when you call the `speak()` method.
-    4. Add some instances of the `Poodle` class to your list of dogs, so list contains some `Dog` instances and some `Poodle` instances, and then re-run the code that iterates through the list.
-
-    </div>
-    """
+        1. In the cell below, create a class named `Dog` that represents dogs. The constructor, `__init__()`, should take one argument in addition to `self`: the dog's name. The class should implement one additional method, which is `speak()`. The `speak()` method should `return` some dog-appropriate sound, for example `"Arf!"`.
+        2. Create a list of several instances of the `Dog` class, and iterate through the list printing each dog's name and the sound they return when you call the `speak()` method.
+        3. Derive a `Poodle` class from the `Dog` class such that instances of the `Poodle` class return a more poodle-appropriate sound, like `"Yip!"`, when you call the `speak()` method.
+        4. Add some instances of the `Poodle` class to your list of dogs, so list contains some `Dog` instances and some `Poodle` instances, and then re-run the code that iterates through the list.
+        """
+    ).style(
+        {
+            "padding": "1.5em",
+            "margin-top": "1em",
+            "border-radius": "0.5em",
+            "box-shadow": "0 0 0.5em #ced4da",
+        }
     )
     return
 
@@ -173,7 +165,6 @@ def _(mo):
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 
