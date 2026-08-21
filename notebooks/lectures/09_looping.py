@@ -26,7 +26,7 @@ def _(mo):
 
 @app.cell
 def _():
-    # Calculate the first 10 elements of the Fibonacci sequence:
+    # Calculate the first 10 elements of the Fibonacci sequence
     fibonacci = [0, 1]
     while len(fibonacci) < 10:
         fibonacci.append(fibonacci[-2] + fibonacci[-1])
@@ -45,8 +45,8 @@ def _(mo):
 
 @app.cell
 def _():
-    for _letter in ["a", "e", "i", "o", "u"]:
-        print(_letter)
+    for letter in ["a", "e", "i", "o", "u"]:
+        print(letter)
     return
 
 
@@ -80,14 +80,14 @@ def _():
         "oxygen",
         "fluorine",
     ]
-    for _i in range(0, len(element_names)):
-        print(f"Item {_i} in the list is {element_names[_i]}.")
+    for i in range(0, len(element_names)):
+        print(f"Item {i} in the list is {element_names[i]}.")
     return
 
 
 @app.cell
 def _():
-    # The stepsize defaults to 1 and the start value defaults to 0:
+    # The stepsize defaults to 1 and the start value defaults to 0
     print(list(range(3)))
     return
 
@@ -130,15 +130,15 @@ def _(mo):
 def _():
     consonants = []
     vowels = ["a", "e", "i", "o", "u"]
-    for _letter in "abcdefghijklmnopqrstuvwxyz":
-        if _letter in vowels:
-            continue
-        consonants.append(
-            _letter
-        )  # Go back to the top of the loop and look at the next item;
-    print(
-        len(consonants)
-    )  # don't go any further in the body of the loop for this particular iteration  # This line won't be run if the letter is a vowel, since we "continue" above for all vowels
+
+    for letter in "abcdefghijklmnopqrstuvwxyz":
+        if letter in vowels:
+            continue  # Don't go any further in the body of the loop for this particular iteration; continue with the next iteration (go back to the top of the loop and look at the next item)
+
+        # This won't be run if letter is a vowel, since we continue above for all vowels
+        consonants.append(letter)
+
+    print(len(consonants), consonants)    
     return
 
 
@@ -153,14 +153,14 @@ def _(mo):
 
 @app.cell
 def _():
-    _i = 100
-    while _i > 0:
-        print(_i)
-        if _i % 7 == 0:
+    i = 100
+    while i > 0:
+        print(i)
+        if i % 7 == 0:
             break
-        _i -= 1
+        i -= 1
     print(
-        f"The biggest multiple of 7 less than 100 is {_i}."
+        f"The biggest multiple of 7 less than 100 is {i}."
     )  # Decrement operator, equivalent to i = i - 1
     return
 
@@ -176,10 +176,10 @@ def _(mo):
 
 @app.cell
 def _():
-    _squared_integers = []
-    for _i in range(0, 10):
-        _squared_integers.append(_i**2)
-    print(_squared_integers)
+    squared_integers = []
+    for i in range(0, 10):
+        squared_integers.append(i**2)
+    print(squared_integers)
     return
 
 
@@ -193,8 +193,8 @@ def _(mo):
 
 @app.cell
 def _():
-    _squared_integers = [_i**2 for _i in range(0, 10)]
-    print(_squared_integers)
+    squared_integers = [i**2 for i in range(0, 10)]
+    print(squared_integers)
     return
 
 
@@ -240,13 +240,16 @@ def _(mo):
 
 @app.cell
 def _():
-    for _letter in "ABC":
-        print(_letter)
+    for letter in "ABC":
+        print(letter)
+
     for vowel in ["a", "e", "i", "o", "u"]:
         print(vowel)
+
     for number in range(0, 5):
         print(number)
-    with open("../static/popular_dog_names.txt", "r") as dog_file:
+
+    with open("./popular_dog_names.txt", "r") as dog_file:
         for line in dog_file:
             if line.startswith("M"):
                 print(line.strip())
@@ -262,7 +265,7 @@ def _(mo):
 
     <h2>Exercise: Dog name finder</h2>
 
-    The file popular_dog_names.txt lists the 10 most popular names for female and male dogs in 2016 (according to the <a href="https://www.akc.org/expert-advice/news/popular-dog-names-2016/">American Kennel Club</a>). Write a function that accepts a proposed dog name and checks the popular_dog_names.txt file to see whether that name is popular. If it is, print that the proposed name is popular, its rank, and for what gender of dog. If the proposed name is not found, print that the name wasn't found.
+    The file ./popular_dog_names.txt lists the 10 most popular names for female and male dogs in 2016, according to the <a href="https://www.akc.org/expert-advice/news/popular-dog-names-2016/">American Kennel Club</a>. Write a function that accepts a proposed dog name and checks the popular_dog_names.txt file to see whether that name is popular. If it is, print that the proposed name is popular, its rank, and for what gender of dog. If the proposed name is not found, print that the name wasn't found.
 
     </div>
     """)

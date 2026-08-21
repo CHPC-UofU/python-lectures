@@ -44,19 +44,26 @@ def _(mo):
 
 @app.cell
 def _():
-    class _Person:
-        """This class represents a person. (This is the docstring for the whole class.)"""
+    class Person:
+        """
+        This class represents a person.
+        (This is the docstring for the whole class.)
+        """
 
         def __init__(self, first_name, last_name, year_of_birth):
-            """Initialization method of the class Person. (This is the docstring for this method.)"""
+            """
+            Initialization method of the class Person.
+            (This is the docstring for this method.)
+            """
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
 
-    p = _Person("George", "Washington", 1732)
-    print(
-        p.first_name
-    )  # Creating an instance of class Person by calling the Person() function.
+
+    # Creating an instance of class Person by calling the Person() function
+    p = Person("George", "Washington", 1732)
+
+    print(p.first_name)
     print(type(p))
     print(p)
     return
@@ -100,7 +107,8 @@ def _(mo):
 def _():
     import time
 
-    class _Person:
+
+    class Person:
         """Here's an improved Person example."""
 
         def __init__(self, first_name, last_name, year_of_birth):
@@ -122,20 +130,22 @@ def _():
             current_year = time.localtime(time.time()).tm_year
             return current_year - self.year_of_birth
 
+
     scientists = [
-        _Person("Isaac", "Newton", 1643),
-        _Person("Marie", "Curie", 1867),
-        _Person("Dorothy", "Hodgkin", 1910),
-        _Person("Albert", "Einstein", 1879),
-        _Person("Galileo", "Galilei", 1564),
-        _Person("Ada", "Lovelace", 1815),
-        _Person("Johannes", "Kepler", 1571),
+        Person("Isaac", "Newton", 1643),
+        Person("Marie", "Curie", 1867),
+        Person("Dorothy", "Hodgkin", 1910),
+        Person("Albert", "Einstein", 1879),
+        Person("Galileo", "Galilei", 1564),
+        Person("Ada", "Lovelace", 1815),
+        Person("Johannes", "Kepler", 1571),
     ]
     scientists.sort()
+
     for scientist in scientists:
         print(
             f"{scientist}, (approximate) age {scientist.approximate_age()} years"
-        )  # Calculate the current year  # Calculate this person's age by subtracting the year they were born from  # the current year. (Not exactly right, but close enough for our purposes.)
+        )
     return
 
 
@@ -144,30 +154,121 @@ def _(mo):
     mo.md(r"""
     How does this work? The lines with `Person(…)` inside of the `scientists` list call the `__init__()` function of the `Person` class. Here, we create a few different *instances* of the class:
 
+    <div>
     <code style="line-height: 2em; color: black !important;">
-    <div style="display: inline-block; border: 0.1em solid #be0000; border-left: 0.2em solid #be0000; margin: 0.2em 0; background-color: #fff5f5; box-sizing: border-box; border-radius: 0.2em;"><div style="width: 100%; padding: 1em; box-sizing: border-box; background-color: #be0000; color: #ffffff;">Person</div><div style="padding: 1em;">def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__init__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__str__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__lt__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">approximate_age</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">first_name</span> = "Isaac"
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">last_name</span> = "Newton"
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">year_of_birth</span> = 1643</div></div>
-    <div style="display: inline-block; border: 0.1em solid #be0000; border-left: 0.2em solid #be0000; margin: 0.2em 0; background-color: #fff5f5; box-sizing: border-box; border-radius: 0.2em;"><div style="width: 100%; padding: 1em; box-sizing: border-box; background-color: #be0000; color: #ffffff;">Person</div><div style="padding: 1em;">def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__init__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__str__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__lt__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">approximate_age</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">first_name</span> = "Marie"
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">last_name</span> = "Curie"
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">year_of_birth</span> = 1867</div></div>
-    <div style="display: inline-block; border: 0.1em solid #be0000; border-left: 0.2em solid #be0000; margin: 0.2em 0; background-color: #fff5f5; box-sizing: border-box; border-radius: 0.2em;"><div style="width: 100%; padding: 1em; box-sizing: border-box; background-color: #be0000; color: #ffffff;">Person</div><div style="padding: 1em;">def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__init__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__str__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__lt__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">approximate_age</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">first_name</span> = "Dorothy"
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">last_name</span> = "Hodgkin"
-    <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">year_of_birth</span> = 1910</div></div></code>
 
-    &vellip;
+      <div style="display: inline-block; vertical-align: top; border: 0.1em solid #be0000; border-left: 0.2em solid #be0000; margin: 0.2em 0; background-color: #fff5f5; box-sizing: border-box; border-radius: 0.2em;">
+        <div style="width: 100%; padding: 1em; box-sizing: border-box; background-color: #be0000; color: #ffffff;">
+          Person
+        </div>
+
+        <div style="padding: 1em;">
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__init__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__str__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__lt__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">approximate_age</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">first_name</span> = "Isaac"
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">last_name</span> = "Newton"
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">year_of_birth</span> = 1643
+          </div>
+        </div>
+      </div>
+
+      <div style="display: inline-block; vertical-align: top; border: 0.1em solid #be0000; border-left: 0.2em solid #be0000; margin: 0.2em 0; background-color: #fff5f5; box-sizing: border-box; border-radius: 0.2em;">
+        <div style="width: 100%; padding: 1em; box-sizing: border-box; background-color: #be0000; color: #ffffff;">
+          Person
+        </div>
+
+        <div style="padding: 1em;">
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__init__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__str__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__lt__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">approximate_age</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">first_name</span> = "Marie"
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">last_name</span> = "Curie"
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">year_of_birth</span> = 1867
+          </div>
+        </div>
+      </div>
+
+      <div style="display: inline-block; vertical-align: top; border: 0.1em solid #be0000; border-left: 0.2em solid #be0000; margin: 0.2em 0; background-color: #fff5f5; box-sizing: border-box; border-radius: 0.2em;">
+        <div style="width: 100%; padding: 1em; box-sizing: border-box; background-color: #be0000; color: #ffffff;">
+          Person
+        </div>
+
+        <div style="padding: 1em;">
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__init__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__str__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">__lt__</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>, …): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">approximate_age</span>(<span style="border-left: 0.2em dashed #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">self</span>): <span style="border: 0.1em solid #228be6; border-left: 0.2em dashed #228be6; margin: 0.2em 0; background-color: #e7f5ff; padding: 0.1em 0.2em; border-radius: 0.2em;">…</span>
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">first_name</span> = "Dorothy"
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">last_name</span> = "Hodgkin"
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em solid #be0000; background-color: #ffc9c9; border-radius: 0.2em; padding: 0.1em 0.2em;">year_of_birth</span> = 1910
+          </div>
+        </div>
+      </div>
+
+    </code>
+
+    &dtdot;
+    </div>
 
     These are bundles of methods (functions) and data. When we loop through the `scientists` list (`for scientist in scientists`), we are addressing each of the instances we created, one by one; in the example, we call the `approximate_age()` method of each instance. Notably, we didn't need to pass it any arguments, even though the function is defined as `approximate_age(self)`. The first argument to a method like this is the object itself, and since we called this function as `scientist.approximate_age()`, Python knows that `self` is (the instance referred to by) `scientist` here. This is a quirk of the language and its object-oriented nature, and it will take some time to learn. With practice, you won't need to think twice about it.
 

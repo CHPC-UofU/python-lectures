@@ -21,14 +21,15 @@ def _():
         """This function converts temperatures in Fahrenheit to temperatures in Celsius"""
         return (x - 32) * 5 / 9
 
-    _temperatures_f = [-40, 0, 32, 70, 100, 451]
-    _temperatures_c = list(map(fahrenheit_to_celsius, _temperatures_f))
+
     # Here is a list of temperatures we want to convert:
-    print(_temperatures_f)
+    temperatures_f = [-40, 0, 32, 70, 100, 451]
+    print(temperatures_f)
+
     # Now we use the map() statement to apply the fahrenheit_to_celsius() function to each element in the list:
-    # Print temperatures in both Fahrenheit and Celsius
-    print(_temperatures_c)
-    return
+    temperatures_c = list(map(fahrenheit_to_celsius, temperatures_f))
+    print(temperatures_c)
+    return (temperatures_f,)
 
 
 @app.cell(hide_code=True)
@@ -40,14 +41,19 @@ def _(mo):
 
 
 @app.cell
-def _():
-    _temperatures_f = [-40, 0, 32, 70, 100, 451]
-    _temperatures_c = list(map(lambda x: (x - 32) * 5 / 9, _temperatures_f))
+def _(temperatures_f):
     # As above, use map() on the list of numbers
-    # Note the extra whitespace here, which is added for clarity
-    # This is possible, even though Python is whitespace-dependent, because Python will look for a ) to close (
-    print(_temperatures_f)
-    print(_temperatures_c)  # An unnamed function of x
+    # Note the extra whitespace here, which is added for clarity; this is possible, even though Python is whitespace-dependent, because Python will look for a ) to close (
+
+    temperatures_c = list(
+        map(
+            lambda x: (x - 32) * 5 / 9,
+            temperatures_f
+        )
+    )
+
+    print(temperatures_f)
+    print(temperatures_c)
     return
 
 
@@ -61,7 +67,7 @@ def _(mo):
 
 @app.cell
 def _():
-    divide_by_ten = lambda x: x / 10.0
+    divide_by_ten = lambda x: x / 10
     divide_by_ten(3)
     return
 

@@ -112,9 +112,8 @@ def _(mo):
 def _():
     # Here's a DNA sequence to translate:
     dna_sequence = "ATGGAGGAGCCGCAGTCAGATCCTAGCGTCGAGCCC"
-    # Write a function that translates this into an amino acid sequence using the codons dictionary from the
-    # geneticcode module and call your function with this sequence. This 36-letter DNA sequence should translate
-    # into a 12-letter amino acid sequence.
+
+    # Write a function that translates this into an amino acid sequence using the codons dictionary from the geneticcode module and call your function with this sequence. This 36-letter DNA sequence should translate into a 12-letter amino acid sequence.
     return
 
 

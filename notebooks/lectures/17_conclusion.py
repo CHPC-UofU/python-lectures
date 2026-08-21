@@ -20,14 +20,14 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     ## What *haven't* we discussed?
-    * Creating iterators and generators (see more_on_iterators.ipynb)
-    * Decorators (touched on here: https://github.com/bmilash/dataclasses-and-yaml)
-    * Type checking in Python ([good article here](https://realpython.com/python-type-checking))
-    * IDEs (integrated development environments)
-        * Coding assistants (AI)
+    * Creating iterators and generators
+    * Decorators
+    * Types and type checking
+    * Integrated development environments (IDEs)
+    * Large language models and AI-assisted development
     * Debugging
     * Benchmarking
-    * Unit testing
+    * Unit and integration testing
     * Defining functions using `*args` and `**kwargs` (arbitrary number of arguments)
     * Parallel programming
 
@@ -40,13 +40,13 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     ## Scripting advice
-    * Don't rely on the operating system's Python; it's old, and you don't control it
+    * Don't rely on the operating system's Python; it's old, and you don't control the version
         * At the CHPC, load a `python` module with, for example, `module load python/3.12.4`
     * Use Python 3; Python 2 support ended on January 1, 2020
     * When editing, save early and save often
     * Save versions of your scripts with [Git](https://www.chpc.utah.edu/documentation/software/git-scm.php) locally, and ideally into a remote software repository
     * Write test code and consider using testing frameworks
-    * Learn to use a debugger ([pdb](https://docs.python.org/3/library/pdb.html), [PyCharm](https://www.jetbrains.com/pycharm/), [IDLE](https://docs.python.org/3.10/library/idle.html), [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/user/debugger.html), [VSCode](https://www.chpc.utah.edu/documentation/software/vscode.php)); this can be much quicker than `print()` statements!
+    * Learn to use a debugger ([pdb](https://docs.python.org/3/library/pdb.html), [PyCharm](https://www.jetbrains.com/pycharm/), [IDLE](https://docs.python.org/3.10/library/idle.html), [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/user/debugger.html), [VS Code](https://www.chpc.utah.edu/documentation/software/vscode.php)); this can be much quicker than `print()` statements!
     """)
     return
 

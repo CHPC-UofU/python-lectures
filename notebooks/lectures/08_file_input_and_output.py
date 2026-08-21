@@ -18,12 +18,12 @@ def _(mo):
 @app.cell
 def _():
     _input_file = open(
-        "../static/popular_dog_names.txt", "r"
+        "./popular_dog_names.txt", "r"
     )  # Open a file for reading
     first_line = _input_file.readline()  # Read one line
     _input_file.close()  # Close the input file
     print(f'Read this data from the file: "{first_line}"')
-    output_file = open("../static/tmpfile.txt", "w")
+    output_file = open("./tmpfile.txt", "w")
     output_file.write(first_line)  # Open another file for writing
     output_file.close()  # Writing overwrites the file if it exists, so be careful!
     return
@@ -67,7 +67,7 @@ def _(mo):
 
 @app.cell
 def _():
-    with open("../static/popular_dog_names.txt", "r") as _input_file:
+    with open("./popular_dog_names.txt", "r") as _input_file:
         all_lines = _input_file.readlines()
         print(f"The file contains {len(all_lines)} lines of data.")
         print(f"The first line is '{all_lines[0]}'")

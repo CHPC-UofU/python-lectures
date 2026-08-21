@@ -23,15 +23,15 @@ app._unparsable_cell(
     import math
     print(f\"The cosine of pi is: {math.cos(math.pi)}\")
 
-    # Renaming the module name
+    # Renaming the module locally to make it shorter and easier to type
     import math as m
     print(f\"Euler's constant e has the following value: {m.e}\")
 
-    # We can also proceed as follows (rather dangerous)
+    # We can also proceed as follows (possibly dangerous; can overwrite objects defined locally and lead to confusion)
     from math import sin, pi
     print(f\"The sine of pi/4 is: {sin(pi / 4)}\")
 
-    # And almost never do this:
+    # Almost never do this (import everything; it is possible to overwrite objects defined locally and it's unclear exactly what is being imported)
     from math import *
     """,
     name="_"
@@ -69,7 +69,7 @@ def _(mo):
         * `math`
         * `string`
         * `random`
-    * Documented here: https://docs.python.org/3/library/index.html
+    * The Standard Library is documented here: https://docs.python.org/3/library/index.html
     """)
     return
 
@@ -86,10 +86,13 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     ## What modules are available on my system?
-    ```python
-    help("modules")
-    ```
     """)
+    return
+
+
+@app.cell
+def _():
+    help("modules")
     return
 
 
@@ -102,24 +105,16 @@ def _(mo):
       * if the file is executed as a script, the test code will run
       * if the file is imported, the test code will not run
     * Has file been executed as script or imported as a module? *The `__name__` variable will tell you.*
-    """)
-    return
 
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
     ```python
-    # Example module code
+    def addition(n, m):
+        return n + m
 
-    # Imports go here
-
-    # Function definitions
-    # Maybe some class or variable definitions
 
     if __name__ == "__main__":
         # This .py file is getting executed as a script, not imported as a module
-        execute_test_code_here()
+        # Run tests or other statements that are unnecessary when imported as a module
+        assert addition(1, 2) == 3
     ```
     """)
     return

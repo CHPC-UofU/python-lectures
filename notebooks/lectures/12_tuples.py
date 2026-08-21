@@ -43,7 +43,7 @@ def _(mo):
     mo.md(r"""
     These are handy for returning multiple values from a function: `return (mean + sd, mean - sd)`
 
-    One oddity about tuple syntax: A tuple with a single element must be defined using a comma, such as `(5,)`. The expression `(5)` is the same as `5`, whereas `(5,)` is a tuple with the single element `5`. In other words, a comma is necessary to initialize a tuple, as parentheses are used *both* to define operation precedence and to initialize tuples.
+    There's an oddity with tuple syntax: A tuple with a single element must be defined using a comma, such as `(5,)`. The expression `(5)` is the same as `5` while `(5,)` is a tuple with the single element `5`. In other words, a comma is necessary to initialize a tuple, as parentheses are used *both* to define operation precedence and to initialize tuples.
     """)
     return
 

@@ -36,7 +36,9 @@ def _():
     # What does this next line do? What is the type of the variable?
     random_letters = {random.choice(string.ascii_lowercase) for i in range(20)}
 
-    print(f"The random_letters set contains {len(random_letters)} unique letters.")
+    print(
+        f"The random_letters set contains {len(random_letters)} unique letters."
+    )
     print(
         f"random_letters contains these vowels: {random_letters.intersection(vowels)}."
     )

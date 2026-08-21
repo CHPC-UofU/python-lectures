@@ -17,7 +17,7 @@ def _(mo):
     * Elements in a list don't have to be unique
         * `[1, 1, 1]` is a valid list
     * Elements in a list can be various types—even other lists
-        * `[[1, 2, 3], ["a", "b", "c"]]` is a valid list of lists: <pre style="display: inline-block; color: black !important;"><span style="padding: 0.2em; background-color: #e7f5ff; border-radius: 0.2em; border: 0.1em solid #a5d8ff;">[<span style="padding: 0.05em; background-color: #fff9db; border-radius: 0.2em; border: 0.1em solid #ffec99;">[1, 2, 3]</span>, <span style="padding: 0.05em; background-color: #fff0f6; border-radius: 0.2em; border: 0.1em solid #fcc2d7;">["a", "b", "c"]</span>]</span></pre>
+        * `[[1, 2, 3], ["a", "b", "c"]]` is a valid list of lists: <pre style="color: black !important;"><span style="padding: 0.2em; background-color: #e7f5ff; border-radius: 0.2em; border: 0.1em solid #a5d8ff;">[<span style="padding: 0.05em; background-color: #fff9db; border-radius: 0.2em; border: 0.1em solid #ffec99;">[1, 2, 3]</span>, <span style="padding: 0.05em; background-color: #fff0f6; border-radius: 0.2em; border: 0.1em solid #fcc2d7;">["a", "b", "c"]</span>]</span></pre>
     * Lists are mutable (you can change the order of elements and add and remove elements)
     * To create a list, you can use
       * **Square brackets**, `[` and `]`, which denote a list
@@ -72,7 +72,7 @@ def _():
     l = ["a", "x", "b", "w", "d", "e"]
 
     l.remove("a")
-    print("With 'a' removed:", l)
+    print("With \"a\" removed:", l)
 
     l.sort()
     print("Sorted:", l)
@@ -81,7 +81,7 @@ def _():
     print("Reversed:", l)
 
     l.append("p")
-    print("With 'p' appended:", l)
+    print("With \"p\" appended:", l)
 
     print("Last element (which has been removed):", l.pop())
     print("First element (which has been removed):", l.pop(0))

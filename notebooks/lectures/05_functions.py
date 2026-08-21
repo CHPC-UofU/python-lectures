@@ -19,14 +19,21 @@ def _(mo):
 
 @app.cell
 def _():
-    def test_function(argument1, argument2, argumentn="default_value"):
+    def test_function(argument1, argument2, argumentn="default value"):
         """This is the documentation string (or docstring) for the function"""
         print("Value of argument1:", argument1)
         print("Value of argument2:", argument2)
         print("Value of argumentn:", argumentn)
+        return "Hello!"
 
-    _x = test_function("a", 2)
-    print("test_function returned", _x)
+
+    value_returned = test_function("a", 2)
+    print("test_function returned", value_returned)
+    return (test_function,)
+
+
+@app.cell
+def _(test_function):
     help(test_function)
     return
 
@@ -60,14 +67,16 @@ def _():
     subject = "The quick brown fox"
     action = "jumps over the lazy dog"
 
+
     def tell_story(subject):
         "Tell a little story"
         note = "This variable only exists within this function!"
         print(f"{subject} {action}")
 
+
     tell_story(subject="The slow tortoise")  # What does "subject=…" do?
-    tell_story(subject)  # Did we reassign the variable subject?
-    tell_story(subject=subject)  # … what? Python doesn't make any sense!
+    tell_story(subject)                      # Did we reassign the variable subject?
+    tell_story(subject=subject)              # … what? Python doesn't make any sense!
     return
 
 
@@ -81,19 +90,48 @@ def _(note):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Wait! Didn't we *change* the value of `subject` when we called the function the first time? What happened here? This is related to the **scope** of the variables.
+    Wait! Didn't we *change* the value of `subject` when we called the function the first time? What happened here? This is related to the **scope** of the variables. Let's highlight scopes and the names defined therein:
 
     <code style="line-height: 2em; color: black !important;">
-    <div style="display: inline-block; border: 0.1em solid #228be6; border-left: 0.2em solid #228be6; margin: 0.2em 0; background-color: #e7f5ff; box-sizing: border-box; padding: 1em; border-radius: 0.2em;"><span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span> = "The quick brown fox"
-    <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">action</span> = "jumps over the lazy dog"<br>
-    def <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>):
-    <div style="display: inline-block; border: 0.1em solid #fab005; border-left: 0.2em dashed #fab005; margin: 0.2em 0; background-color: #fff9db; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">"Tell a little story"
-    <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">note</span> = "This variable only exists within this function!"
-    print(f"{<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>} {<span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">action</span>}")</div><br>
-    <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>="The slow tortoise")
-    <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>)
-    <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>=<span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>)
-    </div>
+      <div style="display: inline-block; border: 0.1em solid #228be6; border-left: 0.2em solid #228be6; margin: 0.2em 0; background-color: #e7f5ff; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+
+        <div>
+          <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span> = "The quick brown fox"
+        </div>
+
+        <div>
+          <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">action</span> = "jumps over the lazy dog"
+        </div>
+
+        <div>
+          def <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>):
+        </div>
+
+        <div style="display: block; border: 0.1em solid #fab005; border-left: 0.2em dashed #fab005; margin: 0.2em 0; background-color: #fff9db; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+          <div>"Tell a little story"</div>
+
+          <div>
+            <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">note</span> = "This variable only exists within this function!"
+          </div>
+
+          <div>
+            print(f"{<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>} {<span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">action</span>}")
+          </div>
+        </div>
+
+        <div>
+          <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>="The slow tortoise")
+        </div>
+
+        <div>
+          <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>)
+        </div>
+
+        <div>
+          <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">tell_story</span>(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>=<span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">subject</span>)
+        </div>
+
+      </div>
     </code>
     """)
     return
@@ -111,13 +149,35 @@ def _(mo):
     Note that this concept of scope also means that
 
     <code style="line-height: 2em; color: black !important;">
-    <div style="display: inline-block; border: 0.1em solid #228be6; border-left: 0.2em solid #228be6; margin: 0.2em 0; background-color: #e7f5ff; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">def <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">x</span>():
-    <div style="display: inline-block; border: 0.1em solid #fab005; border-left: 0.2em dashed #fab005; margin: 0.2em 0; background-color: #fff9db; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;"><span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span> = "Hello!"
-    def <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>():
-    <div style="display: inline-block; border: 0.1em solid #fa5252; border-left: 0.2em dotted #fa5252; margin: 0.2em 0; background-color: #fff5f5; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">print(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span>)</div>
-    </div>
-    <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>()
-    </div>
+      <div style="display: inline-block; border: 0.1em solid #228be6; border-left: 0.2em solid #228be6; margin: 0.2em 0; background-color: #e7f5ff; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+
+        <div>
+          def <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">x</span>():
+        </div>
+
+        <div style="display: block; border: 0.1em solid #fab005; border-left: 0.2em dashed #fab005; margin: 0.2em 0; background-color: #fff9db; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+
+          <div>
+            <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span> = "Hello!"
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>():
+          </div>
+
+          <div style="display: block; border: 0.1em solid #fa5252; border-left: 0.2em dotted #fa5252; margin: 0.2em 0; background-color: #fff5f5; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+            <div>
+              print(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span>)
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>()
+        </div>
+
+      </div>
     </code>
 
     will not work because `y` is out of scope on the last line:
@@ -130,8 +190,10 @@ def _(y):
     def _x():
         message = "Hello!"
 
+
         def y():
             print(message)
+
 
     y()
     return
@@ -143,14 +205,39 @@ def _(mo):
     However,
 
     <code style="line-height: 2em; color: black !important;">
-    <div style="display: inline-block; border: 0.1em solid #228be6; border-left: 0.2em solid #228be6; margin: 0.2em 0; background-color: #e7f5ff; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">def <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">x</span>():
-    <div style="display: inline-block; border: 0.1em solid #fab005; border-left: 0.2em dashed #fab005; margin: 0.2em 0; background-color: #fff9db; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;"><span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span> = "Hello!"
-    def <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>():
-    <div style="display: inline-block; border: 0.1em solid #fa5252; border-left: 0.2em dotted #fa5252; margin: 0.2em 0; background-color: #fff5f5; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">print(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span>)</div>
-    <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>()
-    </div>
-    <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">x</span>()
-    </div>
+      <div style="display: inline-block; border: 0.1em solid #228be6; border-left: 0.2em solid #228be6; margin: 0.2em 0; background-color: #e7f5ff; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+
+        <div>
+          def <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">x</span>():
+        </div>
+
+        <div style="display: block; border: 0.1em solid #fab005; border-left: 0.2em dashed #fab005; margin: 0.2em 0; background-color: #fff9db; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+
+          <div>
+            <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span> = "Hello!"
+          </div>
+
+          <div>
+            def <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>():
+          </div>
+
+          <div style="display: block; border: 0.1em solid #fa5252; border-left: 0.2em dotted #fa5252; margin: 0.2em 0; background-color: #fff5f5; width: 100%; box-sizing: border-box; padding: 1em; border-radius: 0.2em;">
+            <div>
+              print(<span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">message</span>)
+            </div>
+          </div>
+
+          <div>
+            <span style="border-left: 0.2em dashed #fab005; background-color: #ffec99; border-radius: 0.2em; padding: 0.1em 0.2em;">y</span>()
+          </div>
+
+        </div>
+
+        <div>
+          <span style="border-left: 0.2em solid #228be6; background-color: #a5d8ff; border-radius: 0.2em; padding: 0.1em 0.2em;">x</span>()
+        </div>
+
+      </div>
     </code>
 
     will work:
@@ -163,10 +250,13 @@ def _():
     def _x():
         message = "Hello!"
 
+
         def y():
             print(message)
 
+
         y()
+
 
     _x()
     return
@@ -210,7 +300,8 @@ def _(mo):
 def _():
     def f(x):
         """This function squares the argument"""
-        return _x**2
+        return x**2
+
 
     y = f(x=5)
     print(y)

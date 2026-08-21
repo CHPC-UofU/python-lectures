@@ -113,9 +113,13 @@ def _():
 def _():
     my_variable_4 = "hello"
     my_variable_4 = "h" in my_variable_4  # "h" is in "hello", so this is True
-    a = (1,)
+
     # Be careful! "is" tests whether two objects are the exact same object
     # Use == to test for equality
+
+    # Notably, this example may work differently with distinct Python interpreters. With CPython, (a := (1,)) is (b := (1,)) == False; the two are distinct objects. However, with some other interpreters, including popular client-side, browser-based implementations of Python, the two objects are the same. Try this example on your personal computer and see whether the result is the same!
+
+    a = (1,)
     b = (1,)
     print("a:", a)
     print("b:", b)
@@ -123,6 +127,7 @@ def _():
     print("a == b:", a == b)
     print("id(a):", id(a))
     print("id(b):", id(b))
+
     b = a
     print("a:", a)
     print("b:", b)
@@ -137,8 +142,7 @@ app._unparsable_cell(
     r"""
     my_variable = \"The quick brown fox jumps over the lazy dog\"
 
-    # The walrus operator, :=, can be used to set a variable in the middle of an expression
-    # It can make some scripts more concise, but it is never necessary to use the walrus operator (see example below*)
+    # The walrus operator, :=, can be used to set a variable in the middle of an expression. It can make some scripts more concise, but it is never necessary to use the walrus operator (see example below*).
     if (index := my_variable.find(\"fox\")) != -1:  # -1 is the index .find() returns if there are no matches
         print(my_variable[index:])
 
@@ -162,8 +166,8 @@ app._unparsable_cell(
 @app.cell
 def _():
     # Operator precedence
-    print("(2 * 3) + 1 is", (2 * 3) + 1)
-    print("2 * (3 + 1) is", 2 * (3 + 1))
+    print("(2 * 3) + 1 is", (2 *  3) + 1 )
+    print("2 * (3 + 1) is",  2 * (3  + 1))
     return
 
 

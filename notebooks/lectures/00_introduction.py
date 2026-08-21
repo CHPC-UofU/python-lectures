@@ -37,16 +37,18 @@ def _(mo):
 
 @app.cell
 def _():
+    import sys
+
+
     def hands_on_intro_to_python():
         """
         This is a hands-on introduction to the Python language from the Center for
         High Performance Computing. You can run this code cell by typing Shift+Return.
         """
-        import sys
+        return f"Running Python version {sys.version}"
 
-        print("We will use Python version", sys.version)
 
-    hands_on_intro_to_python()
+    print(hands_on_intro_to_python())
     return (hands_on_intro_to_python,)
 
 

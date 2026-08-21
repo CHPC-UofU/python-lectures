@@ -21,11 +21,11 @@ def _(mo):
 
 @app.cell
 def _():
-    s1 = 'Here is a short string.'
+    s1 = 'Here is a string. Note that it contains "quotation marks."'  # Strings enclosed in '' can contain "
 
-    s2 = "Here's another short string. Note that it contains a single quote (an apostrophe)."
+    s2 = "Here's another string. Note that it contains a single quote (an apostrophe)."  # Strings enclosed in "" can contain '
 
-    s3 = "Here's another short string. It contains a single quote, but it has been \"escaped\" so it doesn't end the string."
+    s3 = "Here's another string. It contains \"quotation marks,\" but they have been \"escaped\" with backslashes so they don't end the string."
 
     s4 = """This is a long string.
     Its content includes multiple lines of text."""
@@ -48,12 +48,15 @@ def _():
     # You can multiply and add them:
     s1_1 = "abc-" * 3 + "xyz"
     print("s1:", s1_1)
-    print("s1 split by - characters:", s1_1.split("-"))
+
     # You can split them by some delimiter character using the string's split method:
-    print("s1 converted to uppercase:", s1_1.upper())
-    print("s1 is", len(s1_1), "characters long")
+    print("s1 split by - characters:", s1_1.split("-"))
+
     # Strings have a length:
-    print("s1 contains", s1_1.count("a"), "a characters")
+    print("s1 is", len(s1_1), "characters long")
+
+    print("s1 contains", s1_1.count("a"), "\"a\" characters")
+    print("s1 converted to uppercase:", s1_1.upper())
     return
 
 
@@ -66,7 +69,7 @@ def _():
 
 app._unparsable_cell(
     r"""
-    # You can also reveal the object's methods with the Tab key in a Jupyter Notebook:
+    # You can also typically reveal the object's methods with the Tab key in an IDE or notebook environment:
     s1.
     """,
     name="_"
@@ -99,10 +102,11 @@ def _(mo):
 
 @app.cell
 def _():
-    # f-strings are an easy way to format text.
+    # f-strings are an easy way to format text!
     version_number = 3.6
     s4_1 = f"It's easy to format text with f-strings, which were added in Python {version_number}."
     print(s4_1)
+
     role = "student"
     organization = "the University of Utah"
     print(f"I am a {role} at {organization}.")

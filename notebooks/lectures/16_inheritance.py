@@ -32,13 +32,17 @@ def _(mo):
 def _():
     import time
 
+
     class Person:
         "Here's an improved Person example."
 
         def __init__(
             self, first_name, last_name, year_of_birth  # This is a required argument!
         ):
-            "Constructor method of the class Person. (This is the docstring for this method.)"
+            """
+            Constructor method of the class Person.
+            (This is the docstring for this method.)
+            """
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
@@ -48,7 +52,7 @@ def _():
             return f"{self.last_name}, {self.first_name}: born {self.year_of_birth}"
 
         def __lt__(self, other):
-            "Used to compare this Person object with another Person object for sorting."
+            "Used to compare this Person object with another Person object for sorting"
             return self.last_name < other.last_name
 
         def approximate_age(self):
@@ -58,6 +62,7 @@ def _():
             # Calculate this person's age by subtracting the year they were born from
             # the current year. (Not exactly right, but close enough for our purposes.)
             return current_year - self.year_of_birth
+
 
     rockstars = [
         Person("Lou", "Reed", 1942),
@@ -82,17 +87,20 @@ def _(mo):
 @app.cell
 def _(Person):
     class Student(Person):
-        "A Student is a Person with a GPA."
+        "A Student is a Person with a GPA"
 
         def __init__(self, first_name, last_name, year_of_birth, grade_point_average):
-            # Call the parent class constructor.
+            # Call the parent class constructor
             Person.__init__(self, first_name, last_name, year_of_birth)
+
             # You can also do it like this:
             # super().__init__(first_name, last_name, year_of_birth)
+
             self.gpa = grade_point_average
 
         def __str__(self):
             return f"{self.last_name}, {self.first_name}: born {self.year_of_birth}, GPA {self.gpa}"
+
 
     s = Student("Alice", "Pythoncoder", 2001, 4.0)
     print(s)

@@ -24,20 +24,20 @@ def _():
 
 @app.cell
 def _(elements):
-    # Depending on the value of 'symbol' this code might raise an exception:
-    for _symbol in ("H", "S"):
-        print(f"The name of element {_symbol} is {elements[_symbol]}.")
+    # Depending on the value of symbol, this code might raise an exception:
+    for symbol in ("H", "S"):
+        print(f"The name of element {symbol} is {elements[symbol]}.")
     return
 
 
 @app.cell
 def _(elements):
-    # Rather than testing "if symbol in elements", just wrap the code in a try / except statement:
-    for _symbol in ("H", "S"):
+    # Rather than testing "if symbol in elements," just wrap the code in try and except:
+    for symbol in ("H", "S"):
         try:
-            print(f"The name of element {_symbol} is {elements[_symbol]}.")
+            print(f"The name of element {symbol} is {elements[symbol]}.")
         except KeyError:
-            print(f"Symbol {_symbol} not found in elements dictionary!")
+            print(f"Symbol {symbol} not found in elements dictionary!")
     return
 
 
